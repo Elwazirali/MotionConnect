@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+body, html {
+    height: 100%;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url('././images/space.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flower-font{
+    font-family: 'Indie Flower', cursive;
+}
+.main-navbar{
+    background-color:rgba(153, 51, 153,0.5);
+    border:none;
+}
+.main-jumbotron{
+    background-color:rgba(51, 153, 255,0.5);
+    color:white;
+}
+.welcome-jumbotron{
+    color:white;
+    margin-top: 0.5%;
+    background-color: rgba(0, 255, 153,0.5)
+}
+.project-jumbotron{
+    color:white;
+    margin-top: 0.5%;
+    background-color: rgba(0, 78, 21,0.5)
+}
+.wall-jumbotron{
+    margin-top: 0.5%;
+}
+.project-cards{
+    max-width:350px;
+    color:black;
+    margin-left: 10px;
+}
+
+
+
+.btn-circle {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.aboutSite-panel{
+    margin-top:10%;
+}
+.nav.navbar-nav li a {
+    color: white;
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-toggle{
+    border:none;
+}
+input, select, textarea{
+    color: #ff0000;
+}

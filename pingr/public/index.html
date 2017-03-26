@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>States</title>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/animate.css/animate.css">
+    <link rel="stylesheet" href="global.css">
+
+    <!--Importing libraries-->
+
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/tinymce-dist/tinymce.js"></script>
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-sanitize/angular-sanitize.min.js"></script>
+
+
+
+    <script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="libs/animate.css/gulpfile.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+
+
+    <!--Home state-->
+    <script src="main.app.js"></script>
+    <script src="main.config.js"></script>
+    <script src="main.controller.js"></script>
+
+    <!--Welcome state-->
+    <script src="pages/welcome/welcome.controller.js"></script>
+    <script src="pages/welcome/welcome.config.js"></script>
+    <script src="pages/welcome/welcome.factory.js"></script>
+    <script src="pages/welcome/aboutSite/aboutSite.config.js"></script>
+    <script src="pages/welcome/aboutSite/aboutSite.controller.js"></script>
+    <script src="pages/welcome/aboutMe/aboutMe.config.js"></script>
+    <script src="pages/welcome/aboutMe/aboutMe.controller.js"></script>
+
+
+</head>
+
+<body ng-app="app" class="parallax">
+
+    <section ng-controller="mainCtrl as vm">
+        <nav class="navbar navbar-default main-navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle text-success" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Parent State</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class=""><a ui-sref="home">Device 1</a></li>
+                        <li><a ui-sref="welcome">Device 2</a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <br><br><br><br><br><br>
+        <header class="col-lg-4 col-lg-offset-4 text-center">
+            <div class="jumbotron  main-jumbotron">
+                <h2>SmartOutlet</h2>
+            </div>
+        </header>
+    </section>
+    <ui-view autoscroll="true"></ui-view>
+</body>
+</html>

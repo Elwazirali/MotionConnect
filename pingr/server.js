@@ -9,6 +9,7 @@ var passport = require('passport');
 var session      = require('express-session');
 var http = require('http');
 var schedule = require('node-schedule');
+var Myo = require('myo');
 const queryString = require('query-string');
 
 
@@ -43,6 +44,39 @@ app.use(express.static(__dirname + '/public'));
 
 
 //backend code;
+
+
+Myo.connect('com.stolksdorf.myAwesomeApp', require('ws'));
+
+Myo.on('fist', function(){
+    console.log('Hello Myo!');
+    this.vibrate();
+
+    // An object of options to indicate where to post to
+    var post_options = {
+        host: '192.168.1.51',
+        port: '80',
+        path: '1',
+        method: 'POST'
+
+    };
+
+    // Set up the request
+    var post_req = http.request(post_options, function(res) {
+        res.setEncoding('utf8');
+        res.on('data', function (chunk) {
+            console.log('Response: ' + chunk);
+        });
+    });
+
+    // post the data
+    post_req.write('{"Turn_On" : "button1"}');
+    post_req.end();
+
+
+});
+
+
 
 app.use('/api/on',function(req,res){
     // An object of options to indicate where to post to
