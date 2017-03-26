@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity
         // arm. This lets Myo know which arm it's on and which way it's facing.
         @Override
         public void onArmSync(Myo myo, long timestamp, Arm arm, XDirection xDirection) {
-            mTextView.setText(myo.getArm() == Arm.LEFT ? R.string.arm_left : R.string.arm_right);
+//            mTextView.setText(myo.getArm() == Arm.LEFT ? R.string.arm_left : R.string.arm_right);
         }
 
         // onArmUnsync() is called whenever Myo has detected that it was moved from a stable position on a person's arm after
@@ -78,21 +78,21 @@ public class MainActivity extends AppCompatActivity
         // when Myo is moved around on the arm.
         @Override
         public void onArmUnsync(Myo myo, long timestamp) {
-            mTextView.setText(R.string.hello_world);
+//            mTextView.setText(R.string.hello_world);
         }
 
         // onUnlock() is called whenever a synced Myo has been unlocked. Under the standard locking
         // policy, that means poses will now be delivered to the listener.
         @Override
         public void onUnlock(Myo myo, long timestamp) {
-            mLockStateView.setText(R.string.unlocked);
+//            mLockStateView.setText(R.string.unlocked);
         }
 
         // onLock() is called whenever a synced Myo has been locked. Under the standard locking
         // policy, that means poses will no longer be delivered to the listener.
         @Override
         public void onLock(Myo myo, long timestamp) {
-            mLockStateView.setText(R.string.locked);
+//            mLockStateView.setText(R.string.locked);
         }
 
         // onOrientationData() is called whenever a Myo provides its current orientation,
@@ -123,32 +123,32 @@ public class MainActivity extends AppCompatActivity
             // based on the pose we receive.
             switch (pose) {
                 case UNKNOWN:
-                    mTextView.setText(getString(R.string.hello_world));
+//                    mTextView.setText(getString(R.string.hello_world));
                     break;
                 case REST:
                 case DOUBLE_TAP:
-                    int restTextId = R.string.hello_world;
+//                    int restTextId = R.string.hello_world;
                     switch (myo.getArm()) {
                         case LEFT:
-                            restTextId = R.string.arm_left;
+//                            restTextId = R.string.arm_left;
                             break;
                         case RIGHT:
-                            restTextId = R.string.arm_right;
+//                            restTextId = R.string.arm_right;
                             break;
                     }
-                    mTextView.setText(getString(restTextId));
+//                    mTextView.setText(getString(restTextId));
                     break;
                 case FIST:
-                    mTextView.setText(getString(R.string.pose_fist));
+//                    mTextView.setText(getString(R.string.pose_fist));
                     break;
                 case WAVE_IN:
-                    mTextView.setText(getString(R.string.pose_wavein));
+//                    mTextView.setText(getString(R.string.pose_wavein));
                     break;
                 case WAVE_OUT:
-                    mTextView.setText(getString(R.string.pose_waveout));
+//                    mTextView.setText(getString(R.string.pose_waveout));
                     break;
                 case FINGERS_SPREAD:
-                    mTextView.setText(getString(R.string.pose_fingersspread));
+//                    mTextView.setText(getString(R.string.pose_fingersspread));
                     break;
             }
 
@@ -265,6 +265,7 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
+        onScanActionSelected();
         return super.onOptionsItemSelected(item);
     }
 
@@ -306,16 +307,6 @@ public class MainActivity extends AppCompatActivity
             ((MainActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (R.id.action_scan == id) {
-            onScanActionSelected();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     private void onScanActionSelected() {
